@@ -5,6 +5,9 @@
  */
 package minhajanelajframe;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Lariane
@@ -27,32 +30,68 @@ public class TelaCadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jlNome = new javax.swing.JLabel();
+        jtNome = new javax.swing.JTextField();
+        jbSalvar = new javax.swing.JButton();
+        jbLimpar = new javax.swing.JButton();
+        jlIdade = new javax.swing.JLabel();
+        jtIdade = new javax.swing.JTextField();
+        jlCidade = new javax.swing.JLabel();
+        jtCidade = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        jlNome.setText("Nome:");
+        jlNome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clicouLabelNome(evt);
+            }
+        });
 
-        jTextField1.setText("jTextField1");
+        jtNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                perdeuFoco(evt);
+            }
+        });
+        jtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtNomeActionPerformed(evt);
+            }
+        });
 
-        jButton1.setText("jButton1");
+        jbSalvar.setText("Salvar");
+        jbSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clicouSalvar(evt);
+            }
+        });
 
-        jButton2.setText("jButton2");
+        jbLimpar.setText("Limpar");
+        jbLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clicouLimpar(evt);
+            }
+        });
 
-        jLabel2.setText("jLabel1");
+        jlIdade.setText("Idade:");
+        jlIdade.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                movimentouMouse(evt);
+            }
+        });
 
-        jLabel3.setText("jLabel1");
+        jtIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtIdadeActionPerformed(evt);
+            }
+        });
 
-        jTextField2.setText("jTextField1");
-
-        jTextField3.setText("jTextField1");
+        jlCidade.setText("Cidade:");
+        jlCidade.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clicouCidade(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,22 +101,22 @@ public class TelaCadastro extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2))
+                        .addComponent(jlNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtNome))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(33, 33, 33)
-                        .addComponent(jButton2)
-                        .addGap(0, 201, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlCidade)
+                            .addComponent(jlIdade))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jtIdade)
+                            .addComponent(jtCidade)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1)))
+                        .addComponent(jbSalvar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbLimpar)
+                        .addGap(0, 254, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -85,25 +124,69 @@ public class TelaCadastro extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlNome)
+                    .addComponent(jtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jlIdade)
+                    .addComponent(jtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
+                    .addComponent(jlCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addContainerGap(124, Short.MAX_VALUE))
+                    .addComponent(jbSalvar)
+                    .addComponent(jbLimpar))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtNomeActionPerformed
+
+    private void jtIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtIdadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtIdadeActionPerformed
+
+    private void clicouLimpar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clicouLimpar
+        jtNome.setText("");
+        jtIdade.setText("");
+        jtCidade.setText("");
+    }//GEN-LAST:event_clicouLimpar
+
+    private void clicouSalvar(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clicouSalvar
+         String nome = jtNome.getText();
+         String idade = jtIdade.getText();
+         String cidade = jtCidade.getText();
+         
+         
+         JOptionPane.showMessageDialog( null, "Nome: "+nome+ "\nIdade: "+idade+ "\nCidade: "+cidade );
+         
+    }//GEN-LAST:event_clicouSalvar
+
+    private void clicouLabelNome(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clicouLabelNome
+        System.out.println(" Clicou nome");
+    }//GEN-LAST:event_clicouLabelNome
+
+    private void movimentouMouse(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_movimentouMouse
+        System.out.println(" moveu mouse ");
+    }//GEN-LAST:event_movimentouMouse
+
+    private void clicouCidade(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clicouCidade
+        jlCidade.setText("CIDADE:");
+    }//GEN-LAST:event_clicouCidade
+
+    private void perdeuFoco(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_perdeuFoco
+        if (jtNome.getText().equals(""))
+        {
+            jtNome.setBackground( Color.YELLOW );
+        }
+        
+    }//GEN-LAST:event_perdeuFoco
 
     /**
      * @param args the command line arguments
@@ -141,13 +224,13 @@ public class TelaCadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JButton jbLimpar;
+    private javax.swing.JButton jbSalvar;
+    private javax.swing.JLabel jlCidade;
+    private javax.swing.JLabel jlIdade;
+    private javax.swing.JLabel jlNome;
+    private javax.swing.JTextField jtCidade;
+    private javax.swing.JTextField jtIdade;
+    private javax.swing.JTextField jtNome;
     // End of variables declaration//GEN-END:variables
 }
